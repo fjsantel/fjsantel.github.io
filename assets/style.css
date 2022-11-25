@@ -1,0 +1,15 @@
+.maintitle {
+    text-align: center;
+    font-weight: 10;
+}
+
+.gris {
+    background-color: rgb(112, 109, 109)
+    ;
+}
+.nombre {
+    color: white;
+    text-align: center;
+    font-weight: 2px;
+    
+}
