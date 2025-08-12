@@ -345,48 +345,27 @@ class CustomCursor {
     }
 
     init() {
-        if (!this.cursor) return;
-        
-        // Initialize cursor as visible and at center
-        this.cursor.style.opacity = '1';
-        this.cursor.style.left = '50%';
-        this.cursor.style.top = '50%';
-        this.cursor.style.transform = 'translate(-50%, -50%)';
+        // Use direct DOM manipulation for instant cursor movement
+        this.cursor.style.opacity = '0';
 
-        // Track mouse movement across entire document
-        document.addEventListener('mousemove', e => {
+        window.addEventListener('mousemove', e => {
+            // Direct style manipulation for instant positioning
             this.cursor.style.left = e.clientX + 'px';
             this.cursor.style.top = e.clientY + 'px';
-            this.cursor.style.transform = 'translate(-50%, -50%)';
-            this.cursor.style.opacity = '1';
         });
 
-        // Show cursor when mouse enters any part of the page
         document.addEventListener('mouseenter', () => {
             this.cursor.style.opacity = '1';
         });
 
-        // Hide cursor only when mouse completely leaves the page
         document.addEventListener('mouseleave', () => {
             this.cursor.style.opacity = '0';
         });
 
-        // Add hover effects for interactive elements
         this.interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.body.classList.add('cursor-hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('cursor-hover');
-            });
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
-
-        // Ensure cursor is visible on page load
-        setTimeout(() => {
-            if (this.cursor) {
-                this.cursor.style.opacity = '1';
-            }
-        }, 100);
     }
 }
 

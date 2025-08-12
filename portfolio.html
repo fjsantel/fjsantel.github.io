@@ -76,24 +76,6 @@
             margin: 0;
             padding: 0;
         }
-        #custom-cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 14px solid var(--text-primary);
-            transition: transform 0.1s ease-out, border-bottom-color 0.2s ease;
-            opacity: 1;
-        }
-        body.cursor-hover #custom-cursor {
-            transform: translate(-50%, -50%) scale(1.8);
-            border-bottom-color: var(--accent-yellow);
-        }
         .main-header {
             position: fixed;
             top: 0;
