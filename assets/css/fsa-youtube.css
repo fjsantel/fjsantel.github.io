@@ -1,0 +1,186 @@
+/* === FSA YouTube Section === */
+.fsa-youtube-section {
+    position: relative;
+    width: 100%;
+    padding: 60px 60px 0 60px; /* Inherit general section padding */
+    background-color: var(--black); /* Use your site's background color */
+    overflow: hidden;
+    border-bottom: 1px solid var(--light-gray); /* Inherit general section border */
+}
+
+.fsa-youtube-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.fsa-youtube-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.fsa-youtube-subtitle {
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.fsa-youtube-carousel-wrapper {
+    position: relative;
+    max-width: 1200px; /* Max width for the video area */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--dark-gray); /* Use your site's dark gray */
+}
+
+.fsa-youtube-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio for videos */
+    overflow: hidden;
+}
+
+.fsa-youtube-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fsa-youtube-slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.fsa-youtube-slide div {
+    width: 100%;
+    height: 100%;
+}
+
+.fsa-youtube-slide iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Controls --- */
+.fsa-youtube-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.fsa-youtube-nav-btn, .fsa-youtube-sound-btn {
+    background: none;
+    border: 2px solid var(--accent-yellow); /* Use your accent color */
+    color: var(--accent-yellow);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fsa-youtube-nav-btn:hover, .fsa-youtube-sound-btn:hover {
+    background: var(--accent-yellow);
+    color: var(--black); /* Use your black for text on hover */
+    transform: scale(1.05);
+}
+
+.fsa-youtube-sound-btn.active {
+    background: var(--accent-yellow);
+    color: var(--black);
+}
+
+.fsa-youtube-sound-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+/* --- Info Overlay --- */
+.fsa-youtube-info-overlay {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: var(--text-primary);
+}
+
+.fsa-youtube-video-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.fsa-youtube-video-description {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+    color: var(--text-secondary);
+}
+
+/* --- Responsive Adjustments --- */
+@media screen and (max-width: 768px) {
+    .fsa-youtube-section {
+        padding: 40px 20px 0 20px;
+    }
+
+    .fsa-youtube-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .fsa-youtube-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+
+    .fsa-youtube-nav-btn, .fsa-youtube-sound-btn {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .fsa-youtube-video-title {
+        font-size: 1.2rem;
+    }
+
+    .fsa-youtube-video-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fsa-youtube-section {
+        padding: 30px 15px 0 15px;
+    }
+
+    .fsa-youtube-nav-btn, .fsa-youtube-sound-btn {
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+
+    .fsa-youtube-video-title {
+        font-size: 1rem;
+    }
+
+    .fsa-youtube-video-description {
+        font-size: 0.8rem;
+    }
+}

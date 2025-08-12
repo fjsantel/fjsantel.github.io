@@ -1,132 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/style.css">
-    <title>PORTAFOLIO DESAFIO LATAM</title>
+    <meta name="description" content="Francisco Santelices Ariztía - Director Audiovisual Santiago Chile ⭐ Especialista en Motion Graphics, Video Corporativo, Spots Publicitarios, Branded Content y Video Marketing. Dirección Creativa Audiovisual para Marcas. Portfolio 2025 con Campañas Digitales Creativas, Contenido para Redes Sociales y Storytelling de Marca. Producción integral desde concepto hasta postproducción cinematográfica.">
+    <meta name="keywords" content="director audiovisual santiago chile, motion graphics chile, producción audiovisual chile, video corporativo santiago, spots publicitarios chile, dirección creativa audiovisual, branded content chile, storytelling de marca, marketing visual santiago, campañas digitales creativas, video marketing chile, contenido para redes sociales, reels creativos, microcontenidos audiovisuales, animación 2D 3D chile, postproducción cinematográfica, color grading, montaje edición profesional">
+    <meta name="author" content="Francisco Santelices Ariztía">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.franciscosantelices.cl/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.franciscosantelices.cl/">
+    <meta property="og:title" content="Francisco Santelices Ariztía - Director Audiovisual Chile">
+    <meta property="og:description" content="Portfolio profesional de Francisco Santelices - Director audiovisual especializado en motion graphics, documentales y contenido multimedia en Chile.">
+    <meta property="og:image" content="https://www.franciscosantelices.cl/assets/og-image.jpg">
+    <meta property="og:locale" content="es_CL">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Francisco Santelices Ariztía - Director Audiovisual">
+    <meta property="twitter:description" content="Director audiovisual y creador multimedia profesional en Chile.">
+    <meta property="twitter:image" content="https://www.franciscosantelices.cl/assets/og-image.jpg">
+    
+    
+    <title>Francisco Santelices - Director Audiovisual Santiago | Video Corporativo, Spots Publicitarios & Motion Graphics Chile 2025</title>
+    <!-- Critical CSS Inlined for Zero Blocking -->
+    <style>
+        /* CRITICAL INLINE CSS - Zero Render Blocking */
+        :root {
+            --black: #050505;
+            --text-primary: #FFFFFF;
+            --accent-yellow: #f0b90c;
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none !important;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: var(--font-primary);
+            background-color: var(--black);
+        }
+        #custom-cursor {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 14px solid var(--text-primary);
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+        body.cursor-hover #custom-cursor {
+            transform: translate(-50%, -50%) scale(1.8);
+            border-bottom-color: var(--accent-yellow);
+        }
+        .video-background {
+            width: 100%;
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--black);
+        }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            background-color: var(--black);
+        }
+        .loading-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-primary);
+            background-color: var(--black);
+        }
+        .text-section {
+            flex: 1;
+            background-color: var(--black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .loading-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .text-lines-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 95vw;
+        }
+        .agency-title {
+            font-size: clamp(0.5rem, 1.2vw, 0.9rem);
+            font-weight: 300;
+            letter-spacing: clamp(0.15rem, 0.35vw, 0.25rem);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.1;
+            animation: fadeInUp 1.5s ease-out;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .main-title {
+            font-size: clamp(0.77rem, 1.76vw, 1.375rem);
+            font-weight: 700;
+            letter-spacing: clamp(0.22rem, 0.545vw, 0.425rem);
+            text-transform: uppercase;
+            margin-bottom: 0.165rem;
+            color: var(--text-primary);
+            line-height: 1.1;
+            animation: fadeInUp 1.5s ease-out;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .sub-title {
+            font-size: clamp(0.79rem, 1.8vw, 1.395rem);
+            font-weight: 400;
+            letter-spacing: clamp(0.72rem, 1.66vw, 1.19rem);
+            text-transform: uppercase;
+            color: var(--accent-yellow);
+            animation: fadeInUp 1.5s ease-out 0.3s both;
+            white-space: nowrap;
+            text-align: center;
+            margin-left: clamp(4px, 0.5vw, 9px);
+        }
+        .enter-button-container {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            animation: fadeInUp 1.5s ease-out 0.6s both;
+        }
+        .enter-button {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 600px;
+        }
+        .enter-button:hover {
+            color: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .loading-text { padding: 1.5rem; max-width: 95vw; }
+            .enter-button { font-size: clamp(0.9rem, 2.5vw, 1.1rem); padding: 0.8rem 2rem; max-width: 95vw; }
+        }
+    </style>
+    
+    <!-- Load Montserrat after critical render -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap&text=DIRECCIÓN%20AUDIOVISUAL%20SANTIAGO%20CHILE%20FRANCISCO%20SANTELICES%20ARIZTÍA%20MOTION%20GRAPHICS%20PRODUCCIÓN%20INGRESAR%20AL%20SITIO" as="style" onload="this.onload=null;this.rel='stylesheet';document.documentElement.style.setProperty('--font-primary', 'Montserrat, -apple-system, BlinkMacSystemFont, sans-serif')">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"></noscript>
+    <link rel="preload" href="https://github.com/fjsantel/RESPALDO-SITIO/raw/main/tentaculos_1.mp4" as="video" type="video/mp4">
+    <meta name="theme-color" content="#050505">
+    
+    <!-- Service Worker -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch((registrationError) => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        });
+    }
+    </script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/logo nav.png" width="50px" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="www.contrapeso.cl" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-    <div class="text-bg-dark p-3">
-        <h1 class="maintitle">PORTAFOLIO DE DESAFIOS </h1>
-    </div>
-    <div class="gris">
-        <div class="col-sm">
-           <h5 class="nombre">
-            Fundamentos Desarrollo Web (G25)
-           </h5>
-          </div>
-    </div>
-
-    <div class="card text-center">
-        <div class="card-header">
-            <img src="assets/img/Foto 1.png" class="img-fluid" alt="..." />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">Primer desafío // FAKE CV HTML5</p>
-          <a href="https://github.com/fjsantel/desafio-cupones" class="btn btn-dark">VER EN GIT HUB</a>
+    <div id="custom-cursor"></div>
+    <div class="loading-content">
+        <!-- Video de fondo -->
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="https://github.com/fjsantel/RESPALDO-SITIO/raw/main/tentaculos_1.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
         </div>
 
-        <div class="card text-center">
-            <div class="card-header">
-                <img src="assets/img/Foto 2.png" class="img-fluid" alt="..." />
+        <!-- Área negra con texto abajo -->
+        <div class="text-section">
+            <div class="loading-text">
+                <div class="text-lines-container">
+                    <h3 class="agency-title">AGENCIA DE CONTENIDOS</h3>
+                    <h1 class="main-title">FRANCISCO SANTELICES ARIZTÍA</h1>
+                    <h2 class="sub-title">CREATIVE CONTENT</h2>
+                </div>
+                
+                <!-- Strategic SEO Content with New Keywords -->
+                <div style="position: absolute; left: -9999px; opacity: 0;">
+                    <h4>Director Audiovisual y Director Creativo Santiago Chile</h4>
+                    <p>Especialista en <strong>motion graphics chile</strong>, <strong>video corporativo santiago</strong>, <strong>spots publicitarios chile</strong>, <strong>dirección creativa audiovisual</strong>, <strong>branded content</strong> y <strong>storytelling de marca</strong>. Portfolio 2025 con <strong>campañas digitales creativas</strong>, <strong>marketing visual</strong>, <strong>video marketing</strong>, <strong>contenido para redes sociales</strong>, <strong>reels creativos</strong> y <strong>microcontenidos audiovisuales</strong>.</p>
+                    <span>Producción de spots publicitarios, animación 2D y 3D, postproducción cinematográfica, color grading, montaje y edición profesional, contenido vertical TikTok Instagram, videos interactivos, live streaming profesional, activaciones publicitarias, marketing de experiencias</span>
+                    <h5>Servicios de Video Marketing Chile 2025</h5>
+                    <ul style="list-style: none;">
+                        <li>Video Corporativo Santiago - Producción integral</li>
+                        <li>Spots Publicitarios Chile - Campañas creativas</li>
+                        <li>Motion Graphics - Animación 2D y 3D profesional</li>
+                        <li>Branded Content - Storytelling de marca efectivo</li>
+                        <li>Video Marketing - Estrategias audiovisuales digitales</li>
+                        <li>Contenido Redes Sociales - Reels e Instagram creativos</li>
+                        <li>Dirección Creativa - Campañas multiplataforma</li>
+                        <li>Postproducción Cinematográfica - Color grading profesional</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Segundo desafío // Landing page</p>
-              <a href="https://github.com/fjsantel/desafio-landing-page" class="btn btn-dark">VER EN GIT HUB</a>
-            </div>
-
-        
-
             
+            <div class="enter-button-container">
+                <button class="enter-button" onclick="window.location.href='portfolio.html'">
+                    INGRESAR AL SITIO
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Custom cursor functionality
+        const cursor = document.getElementById('custom-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.transform = 'translate(-50%, -50%)';
+        });
+
+        // Hover effects for interactive elements
+        const hoverElements = document.querySelectorAll('.enter-button, button, a');
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
             
-        
-      </div>
-      <div class="card text-center">
-        <div class="card-header">
-            <img src="assets/img/foto 3.png" class="img-fluid" alt="..." />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">Tercer desafío // Iguana Land</p>
-          <a href="https://github.com/fjsantel/desafio-iguana" class="btn btn-dark">VER EN GIT HUB</a>
-        </div>
+            element.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
+        });
 
-      </div>
-      <div class="card text-center">
-        <div class="card-header">
-            <img src="assets/img/Foto 4.png" class="img-fluid" alt="..." />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">Cuarto desafío // Cuppon Maniac</p>
-          <a href="https://github.com/fjsantel/desafio-cupones" class="btn btn-dark">VER EN GIT HUB</a>
-        </div>
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-         
-
-        </div>
-
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/img/CR-5.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/CR-4.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/CR-3.jpg" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">Somos especialistas en el desarrollo de contenido.</p>
-          <a href="https://www.contrapeso.cl" class="btn btn-dark">IR A WEB OFICIAL DE CONTRAPESO</a>
-        </div>
-        
-
-   
-
-    
-    
+        // Initialize cursor position
+        document.addEventListener('DOMContentLoaded', () => {
+            cursor.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>

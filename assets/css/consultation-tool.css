@@ -1,0 +1,364 @@
+/* HERRAMIENTA DE CONSULTA - MONTSERRAT INTEGRATION */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
+
+:root {
+    --primary-text: #ffffff;
+    --secondary-text: #808080;  
+    --background-primary: #000000;
+    --background-secondary: #0a0a0a;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --hover-subtle: rgba(255, 255, 255, 0.05);
+}
+
+/* INTEGRACIÓN SEAMLESS CON SITIO EXISTENTE */
+.consultation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* INTEGRACIÓN CON CHAT SECTION EXISTENTE */
+.chat-section .consultation-container {
+    margin-top: 40px;
+}
+
+/* TRIGGER INICIAL - RESPETANDO TU DISEÑO */
+.consultation-trigger-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.trigger-message {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.trigger-question {
+    font-size: 1.2rem;
+    color: var(--primary-text);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.start-consultation-button {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--secondary-text);
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.start-consultation-button:hover {
+    background: var(--hover-subtle);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+/* ÁREA DE CONVERSACIÓN - ESTADO INICIAL OCULTO */
+.consultation-conversation-area {
+    display: none;
+    border: 1px solid var(--border-subtle);
+    background: var(--background-secondary);
+    padding: 2rem;
+    margin-top: 2rem;
+    min-height: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.consultation-conversation-area.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MENSAJES - ESTILO COHERENTE CON MONTSERRAT */
+.consultation-message {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: messageAppear 0.4s ease-out forwards;
+}
+
+.consultation-message-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--primary-text);
+    font-weight: 300;
+}
+
+.consultation-message.user .consultation-message-content {
+    color: var(--secondary-text);
+    font-style: italic;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border-subtle);
+    font-weight: 300;
+}
+
+.consultation-message-content p {
+    margin-bottom: 1rem;
+}
+
+.consultation-message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.consultation-message-content strong {
+    color: var(--primary-text);
+    font-weight: 700;
+}
+
+/* OPCIONES DE RESPUESTA - MINIMALISTAS */
+.consultation-response-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    opacity: 0;
+    animation: optionsAppear 0.4s ease-out 0.2s forwards;
+}
+
+.consultation-response-option {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--secondary-text);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.consultation-response-option:hover {
+    background: var(--hover-subtle);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+/* INPUT PERSONALIZADO */
+.consultation-custom-input-section {
+    margin-top: 1.5rem;
+    opacity: 0;
+    animation: inputAppear 0.4s ease-out 0.3s forwards;
+}
+
+.consultation-input-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.consultation-custom-input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--primary-text);
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s ease;
+}
+
+.consultation-custom-input:focus {
+    outline: none;
+    border-color: var(--primary-text);
+}
+
+.consultation-custom-input::placeholder {
+    color: var(--secondary-text);
+    font-weight: 300;
+}
+
+.consultation-send-btn {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--secondary-text);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.consultation-send-btn:hover:not(:disabled) {
+    background: var(--hover-subtle);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+.consultation-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* TYPING INDICATOR SUTIL */
+.consultation-typing-indicator {
+    display: none;
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.consultation-typing-indicator.visible {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* CTA FINAL */
+.consultation-final-cta {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--background-secondary);
+    margin-top: 2rem;
+    display: none;
+}
+
+.consultation-final-cta.show {
+    display: block;
+    opacity: 0;
+    animation: finalCtaAppear 0.5s ease-out forwards;
+}
+
+.consultation-final-cta h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.consultation-final-cta p {
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.consultation-final-link {
+    display: inline-block;
+    color: var(--secondary-text);
+    text-decoration: none;
+    border: 1px solid var(--border-subtle);
+    padding: 0.8rem 2rem;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.consultation-final-link:hover {
+    background: var(--hover-subtle);
+    border-color: var(--primary-text);
+    color: var(--primary-text);
+}
+
+/* ANIMACIONES SUTILES */
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes optionsAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes inputAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalCtaAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .consultation-container {
+        padding: 0 15px;
+    }
+    
+    .consultation-conversation-area {
+        padding: 1.5rem;
+    }
+    
+    .consultation-input-container {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .consultation-send-btn {
+        align-self: stretch;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .consultation-container {
+        margin: 15px auto;
+    }
+    
+    .trigger-question {
+        font-size: 1.1rem;
+    }
+    
+    .start-consultation-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}

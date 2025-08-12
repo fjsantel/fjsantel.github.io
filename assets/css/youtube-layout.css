@@ -1,0 +1,147 @@
+/* === YouTube Section Layout & Responsiveness === */
+.youtube-slider-container {
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center the full-width section */
+    padding: 0; /* Remove default padding from main.css if any */
+    overflow: hidden; /* Hide horizontal scrollbar caused by 100vw */
+    background-color: var(--black); /* Ensure background matches site */
+}
+
+.slider-header,
+.slider-controls {
+    max-width: 1200px; /* Constrain content width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px; /* Match general section padding */
+    padding-right: 60px; /* Match general section padding */
+}
+
+.video-slider-wrapper {
+    width: 100%; /* Make it fill the 100vw parent */
+    max-width: none; /* Remove any max-width restriction */
+    margin: 0; /* Remove any auto margins */
+}
+
+.youtube-slider-container .slider-header {
+    padding-top: 4rem; /* Add top padding for header */
+    padding-bottom: 2rem; /* Add bottom padding for header */
+}
+
+.youtube-slider-container .slider-controls {
+    padding-bottom: 4rem; /* Add bottom padding for controls */
+    display: flex; /* Ensure flexbox for button grouping */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Reduced gap for tighter grouping */
+}
+
+.video-slider {
+    border-radius: 0; /* Remove border-radius if it conflicts with full-width */
+    position: relative; /* Added for absolute positioning of iframe */
+    overflow: hidden;
+    background-color: var(--dark-gray); /* Use your site's dark gray */
+    width: 100%; /* Explicitly set width to 100% */
+    height: 0; /* Set height to 0, padding-bottom will define height */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Make video container fill parent height */
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove border */
+    pointer-events: none; /* Allow mouse events to pass through to parent */
+    object-fit: cover; /* Ensure video fills container without black bars */
+}
+
+/* New/Modified slider-nav styles to be part of the flex container */
+.youtube-slider-container .slider-nav {
+    position: static; /* Override any absolute positioning from main styles */
+    transform: none; /* Reset any transforms that might be moving it */
+    /* Inherit other styles from .slider-nav */
+}
+
+.slider-nav {
+    background: none;
+    border: 2px solid var(--accent-yellow);
+    color: var(--accent-yellow);
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-nav:hover {
+    background-color: var(--accent-yellow);
+    color: var(--black);
+    transform: scale(1.05);
+}
+
+.slider-nav:active {
+    transform: scale(1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .slider-header,
+    .video-slider-wrapper,
+    .slider-controls {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .youtube-slider-container .slider-header {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .youtube-slider-container .slider-controls {
+        padding-bottom: 2rem;
+    }
+
+    .slider-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider-header,
+    .video-slider-wrapper,
+    .slider-controls {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .youtube-slider-container .slider-header {
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .youtube-slider-container .slider-controls {
+        padding-bottom: 1.5rem;
+    }
+
+    .slider-nav {
+        width: 35px; /* Slightly smaller for very small screens */
+        height: 35px;
+        font-size: 1rem;
+    }
+}

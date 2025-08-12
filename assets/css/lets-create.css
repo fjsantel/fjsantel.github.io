@@ -1,0 +1,190 @@
+/* LET'S CREATE - NUEVO DISEÑO ESTRUCTURAL */
+
+.lets-create-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid var(--light-gray);
+    background-color: var(--dark-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center; /* Centrar todo el texto dentro del contenedor */
+}
+
+.text-block {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    /* Se elimina text-align de aquí para que herede del padre */
+}
+
+.text-block.introduction {
+    text-align: center;
+    font-style: italic;
+}
+
+.start-consultation-wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.start-consultation-button {
+    background-color: var(--accent-yellow);
+    color: var(--black);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-consultation-button:hover {
+    background-color: #ffde59;
+}
+
+.text-separator {
+    border: 0;
+    height: 1px;
+    background-color: var(--light-gray);
+    margin: 0;
+}
+
+.response-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.option-btn {
+    background-color: var(--medium-gray);
+    border: 1px solid var(--light-gray);
+    color: var(--text-primary);
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option-btn:hover, .option-btn.selected {
+    background-color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+    color: var(--black);
+}
+
+.user-input {
+    display: flex;
+}
+
+#userInput {
+    width: 100%;
+    min-height: 120px;
+    background-color: var(--black);
+    border: 1px solid var(--light-gray);
+    color: var(--text-primary);
+    padding: 15px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    resize: vertical;
+}
+
+#userInput:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+}
+
+.consultation-final-cta {
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+
+.consultation-final-cta h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.consultation-final-cta p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.consultation-final-link {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--black);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.consultation-final-link:hover {
+    background-color: #ffde59; /* Un amarillo más claro al pasar el mouse */
+}
+
+.text-block.tool-introduction p {
+    margin-bottom: 15px; /* Espacio entre las líneas de introducción */
+}
+
+.intro-bold-line {
+    font-weight: bold;
+    color: var(--text-primary);
+    /* Se elimina white-space: nowrap para permitir el ajuste de línea */
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Tamaño de fuente adaptable */
+}
+
+.intro-sub-line {
+    color: var(--text-secondary);
+}
+
+.continue-wrapper {
+    margin-top: 20px;
+}
+
+/* --- Animación de Reposo --- */
+.idle-animation-cube {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Posición inicial */
+    display: none; /* Oculto por defecto */
+    animation: slide-and-disappear 4s linear infinite;
+}
+
+@keyframes slide-and-disappear {
+    0% {
+        left: 20px;
+        opacity: 1;
+    }
+    90% {
+        left: calc(100% - 32px); /* 20px de padding derecho + 12px de ancho del cubo */
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% - 32px);
+        opacity: 0;
+    }
+}
+
+/* --- ESTADOS INICIALES Y TRANSICIONES --- */
+.lets-create-container > *:not(.introduction) {
+    display: none;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media screen and (max-width: 768px) {
+    .lets-create-container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .response-options {
+        grid-template-columns: 1fr; /* Apila los botones en móvil */
+    }
+}
